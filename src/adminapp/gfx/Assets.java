@@ -5,12 +5,12 @@ import java.awt.image.BufferedImage;
 
 public class Assets {
 
-	private static final int width = 128, height = 127;
+	private static final int width = 128, height = 128;
 
 	public static Font PixelForce20;
 	
 	public static BufferedImage box;
-	public static BufferedImage[] loginButton, memberDeleteButton, memberCreateButton, memberFindButton;
+	public static BufferedImage[] loginButton, memberDeleteButton, memberCreateButton, memberFindButton, backButton;
 	
 	public static void init() {
 		
@@ -24,7 +24,7 @@ public class Assets {
 		loginButton[1] = loginSheet.crop(width, 2, width, height);
 		
 		memberFindButton = new BufferedImage[2];
-		memberFindButton[0] = userMainSheet.crop(2, 2, width, 125);
+		memberFindButton[0] = userMainSheet.crop(2, 2, width, height);
 		memberFindButton[1] = userMainSheet.crop(width, 0, width, height);
 		
 		memberDeleteButton = new BufferedImage[2];
@@ -34,6 +34,10 @@ public class Assets {
 		memberCreateButton = new BufferedImage[2];
 		memberCreateButton[0] = userMainSheet.crop(width * 4, 0, width, height);
 		memberCreateButton[1] = userMainSheet.crop(width * 5, 0, width, height);
+		
+		backButton = new BufferedImage[2];
+		backButton[0] =  userMainSheet.crop(width * 6, 0, width, height);
+		backButton[1] =  userMainSheet.crop(width * 7, 0, width, height);
 		
 		box = loginSheet.crop(width * 2, 2, width, height);
 	}

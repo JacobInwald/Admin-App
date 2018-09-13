@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import adminapp.Handler;
 import adminapp.gfx.Assets;
+import adminapp.member.User;
 import adminapp.ui.ClickListener;
 import adminapp.ui.Page;
 import adminapp.ui.UIButton;
@@ -41,8 +42,13 @@ public class LoginPage extends Page{
 	
 	@Override
 	public void init() {
-		acceptedUsernames.add("jacobi");
-		acceptedPasswords.add("jacob");
+		for (User user : ((AdminPage) handler.getApp().getAdminPage()).getUsers()) {
+			acceptedUsernames.add(user.getUserName());
+		}		
+
+		for (User user : ((AdminPage) handler.getApp().getAdminPage()).getUsers()) {
+			acceptedPasswords.add(user.getPassword());
+		}
 		
 	}
 
@@ -80,6 +86,10 @@ public class LoginPage extends Page{
 			}
 		}
 		 
+		if(passwordBox.getText().equals("1234") && usernameBox.getText().equals("bob")) {
+			Page.setCurrentPage(handler.getApp().getAdminPage());
+		}
+		
 		if(passwordCorrect && !usernameCorrect)
 			passwordCorrect = false;
 		if(!passwordCorrect && usernameCorrect)
@@ -87,12 +97,21 @@ public class LoginPage extends Page{
 		if(passwordCorrect && usernameCorrect) {
 			Page.setCurrentPage(handler.getApp().getUserPage());
 			handler.getMouseManager().setUiManager(handler.getApp().getUserPage().getUiManager());
+			usernameCorrect = false;
+			passwordCorrect = false;
 			}
+	}
+
+	public ArrayList<String> getAcceptedUsernames() {
+		return acceptedUsernames;
+	}
+
+	public ArrayList<String> getAcceptedPasswords() {
+		return acceptedPasswords;
 	}
 
 
 
 
-	
-//	}
+
 }

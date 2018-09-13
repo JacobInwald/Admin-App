@@ -121,6 +121,28 @@ public class UITextBox extends UIObject{
 				text = "y";
 			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_Z))
 				text = "z";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_0))
+				text = "0";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_1))
+				text = "1";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_2))
+				text = "2";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_3))
+				text = "3";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_4))
+				text = "4";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_5))
+				text = "5";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_6))
+				text = "6";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_7))
+				text = "7";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_8))
+				text = "8";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_9))
+				text = "9";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_SLASH))
+				text = "/";
 		}
 		else if(text.length() >= 1) {
 			if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_A))
@@ -175,6 +197,29 @@ public class UITextBox extends UIObject{
 				text += "y";
 			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_Z))
 				text += "z";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_0))
+				text += "0";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_1))
+				text += "1";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_2))
+				text += "2";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_3))
+				text += "3";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_4))
+				text += "4";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_5))
+				text += "5";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_6))
+				text += "6";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_7))
+				text += "7";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_8))
+				text += "8";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_9))
+				text += "9";
+			else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_SLASH))
+				text += "/";
+			
 			}
 		
 		}

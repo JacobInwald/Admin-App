@@ -46,6 +46,8 @@ public class KeyManager implements KeyListener{
 		N = keys[KeyEvent.VK_N]; M = keys[KeyEvent.VK_M];
 		BACKSPACE = keys[KeyEvent.VK_BACK_SPACE];
 		
+		
+		
 	}
 	
 	

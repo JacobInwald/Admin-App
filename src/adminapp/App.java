@@ -10,8 +10,13 @@ import adminapp.input.KeyManager;
 import adminapp.input.MouseManager;
 import adminapp.member.Member;
 import adminapp.ui.Page;
+import adminapp.ui.pages.AdminPage;
+import adminapp.ui.pages.CreateMemberPage;
+import adminapp.ui.pages.CreateUserPage;
 import adminapp.ui.pages.LoginPage;
+import adminapp.ui.pages.MemberListPage;
 import adminapp.ui.pages.MemberPage;
+import adminapp.ui.pages.UserInfoPage;
 import adminapp.ui.pages.UserPage;
 
 public class App implements Runnable{
@@ -31,6 +36,11 @@ public class App implements Runnable{
 	private Page loginPage;
 	private Page userPage;
 	private Page memberPage;
+	private Page createMemberPage;
+	private Page adminPage;
+	private Page userInfoPage;
+	private Page createUserPage;
+	private Page memberListPage;
 	
 	private Handler handler;
 	
@@ -40,7 +50,7 @@ public class App implements Runnable{
 		this.title = title;
 		keyManager = new KeyManager();
 		mouseManager = new MouseManager();
-		
+
 	}
 	
 	private void init() {
@@ -53,12 +63,23 @@ public class App implements Runnable{
 		display.getCanvas().addMouseMotionListener(mouseManager);
 		handler = new Handler(this);
 		
+		adminPage = new AdminPage(handler);
+		adminPage.init();
 		loginPage = new LoginPage(handler);
 		loginPage.init();
 		userPage = new UserPage(handler);
 		userPage.init();
-		memberPage = new MemberPage(handler, new Member("", 1, "", 1));
+		memberPage = new MemberPage(handler, new Member("", "", 1, ""));
 		memberPage.init();
+		createMemberPage = new CreateMemberPage(handler);
+		createMemberPage.init();
+		userInfoPage = new UserInfoPage(handler);
+		userInfoPage.init();
+		createUserPage = new CreateUserPage(handler);
+		createUserPage.init();
+	//	memberListPage = new MemberListPage(handler);
+	//	memberListPage.init();
+	
 		Page.setCurrentPage(loginPage);
 	}
 	
@@ -152,6 +173,26 @@ public class App implements Runnable{
 
 	public Page getMemberPage() {
 		return memberPage;
+	}
+
+	public Page getCreateMemberPage() {
+		return createMemberPage;
+	}
+
+	public Page getAdminPage() {
+		return adminPage;
+	}
+
+	public Page getUserInfoPage() {
+		return userInfoPage;
+	}
+
+	public Page getCreateUserPage() {
+		return createUserPage;
+		}
+
+	public Page getMemberListPage() {
+		return memberListPage;
 	}
 
 	

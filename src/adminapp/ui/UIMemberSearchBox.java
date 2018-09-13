@@ -14,7 +14,7 @@ public class UIMemberSearchBox extends UITextBox{
 	
 	public Member getMember(ArrayList<Member> members) {
 		for(Member otherMember : members) {
-			if(otherMember.getName().equals(getText()))
+			if(otherMember.getFirstName().equals(getText()))
 				return otherMember;
 			
 		}

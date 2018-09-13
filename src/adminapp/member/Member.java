@@ -2,18 +2,19 @@ package adminapp.member;
 
 public class Member {
 
-	private String name, DofB;
-	private int age, id;
+	private String firstName, DofB, secondName;
+	private int age;
 	
-	public Member(String name, int age, String DofB, int id) {
-		this.name = name;
+	public Member(String name, String secondName, int age, String DofB) {
+		this.firstName = name;
+		this.secondName = secondName;
 		this.age = age;
 		this.DofB = DofB;
-		this.id = id;
+	
 	}
 
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
 
 	public String getDofB() {
@@ -24,12 +25,18 @@ public class Member {
 		return age;
 	}
 
-	public int getId() {
-		return id;
+
+
+	public String getSecondName() {
+		return secondName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String name) {
+		this.firstName = name;
+	}
+	
+	public void setSecondName(String secondName) {
+		this.secondName = secondName;
 	}
 
 	public void setDofB(String dofB) {
@@ -40,9 +47,7 @@ public class Member {
 		this.age = age;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
+
 
 	
 	
